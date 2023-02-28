@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 module.exports = {
     connectToDb: () => {
-        mongoose.connect('mongodb://localhost:27017/Employeedesk')
+        mongoose.connect(`${process.env.mongoURL}/Employeedesk`)
             .then(() => {
                 console.log("Connected to db");
                 

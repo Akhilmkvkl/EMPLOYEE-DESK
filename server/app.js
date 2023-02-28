@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const path = require('path');
+require('dotenv').config()
 
 const db = require("./Config/database");
 
@@ -28,6 +29,6 @@ db.connectToDb();
 
 
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   console.log("sever started running ");
 });
