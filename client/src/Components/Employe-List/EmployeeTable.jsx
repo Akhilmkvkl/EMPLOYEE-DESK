@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Input, Button } from "antd";
-import { EmployeeInstance } from "../../Instance/axios";
+import  {EmployeeInstance}  from "../../Instance/axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -13,14 +13,25 @@ const EmployeeTable = () => {
   const [searchKeyword, setSearchKeyword] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await EmployeeInstance.get("/get-Employees");
-      setEmployees(response.data.employeeDetails);
-      setLoading(false);
-    };
     fetchData();
   }, [currentPage, change]);
+
+  const fetchData = async() => {
+    try {
+      setLoading(true);
+      console.log('nnn')
+    const response = await EmployeeInstance.post("/getEmployees");
+    console.log(response,"this is response")
+    setEmployees(response.data.employeeDetails);
+    setLoading(false);
+      
+    } catch (error) {
+      console.log(error)
+       return error
+    }
+
+
+  };
 
   const Navigate = useNavigate();
 
@@ -110,10 +121,12 @@ const EmployeeTable = () => {
   const onSearch = (value) => {
     setSearchKeyword(value);
   };
+  
+  
 
-  const filteredEmployees = employees.filter((employee) =>
-    employee.name.toLowerCase().includes(searchKeyword.toLowerCase())
-  );
+  // const filteredEmployees = employees.filter((employee) =>
+  //   employee.name.toLowerCase().includes(searchKeyword.toLowerCase())
+  // );
 
   return (
     <div style={{ marginTop: "7vh", width: "90vw", marginLeft: "4vw" }}>
@@ -128,7 +141,7 @@ const EmployeeTable = () => {
 
       <Table
         columns={columns}
-        dataSource={filteredEmployees}
+        dataSource={employees}
         loading={loading}
         pagination={{
           current: currentPage,

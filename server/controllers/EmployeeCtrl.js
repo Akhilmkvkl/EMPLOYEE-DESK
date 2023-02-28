@@ -30,9 +30,12 @@ const EmployeeCtrl = {
   },
 
   getEmployee: (req, res) => {
+    console.log("hiii get emp");
     try {
+      console.log("hiii get emp");
       Employee.find().then((employeeDetails) => {
         if (employeeDetails) {
+          console.log(employeeDetails)
           res.send({ msg: "successfully fetched", employeeDetails });
         }
       });

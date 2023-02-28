@@ -4,7 +4,7 @@ const EmployeeCtrl=require('../controllers/EmployeeCtrl')
 
 
 router.post('/add-Employee',EmployeeCtrl.addEmployee)
-router.get("/get-Employees",EmployeeCtrl.getEmployee)
+router.post("/getEmployees",EmployeeCtrl.getEmployee)
 router.post("/delete-Employees",EmployeeCtrl.deleteEmployee)
 
 

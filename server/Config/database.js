@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 module.exports = {
     connectToDb: () => {
-        mongoose.connect(`${process.env.mongoURL}/Employeedesk`)
+        mongoose.connect(`${process.env.mongoURL}`)
             .then(() => {
                 console.log("Connected to db");
                 
