@@ -124,9 +124,9 @@ const EmployeeTable = () => {
   
   
 
-  // const filteredEmployees = employees.filter((employee) =>
-  //   employee.name.toLowerCase().includes(searchKeyword.toLowerCase())
-  // );
+  const filteredEmployees = employees.filter((employee) =>
+    employee.name.toLowerCase().includes(searchKeyword.toLowerCase())
+  );
 
   return (
     <div style={{ marginTop: "7vh", width: "90vw", marginLeft: "4vw" }}>
@@ -141,7 +141,7 @@ const EmployeeTable = () => {
 
       <Table
         columns={columns}
-        dataSource={employees}
+        dataSource={filteredEmployees}
         loading={loading}
         pagination={{
           current: currentPage,
