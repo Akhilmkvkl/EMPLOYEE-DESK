@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeView from '../../Components/Employe-View/EmployeeView'
+import EmployeeView from '../../Components/Employee-View/EmployeeView'
 import Navbar from '../../Components/Navebar/Navebar'
 
 function ViewEmployee() {

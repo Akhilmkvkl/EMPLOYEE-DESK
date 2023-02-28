@@ -9,7 +9,7 @@ const Navbar = () => {
   <Menu mode="horizontal">
     <Link to={'/'} style={{ textDecoration: "none" }}>
       <Menu.Item key="brand" style={{ fontWeight: "bold", fontSize: "1.2rem",textDecoration: "none" }}>
-        EMPLOYE DESK
+        EMPLOYEE DESK
       </Menu.Item>
     </Link>
     <Menu.Item key="add-employee" style={{marginLeft:"65vw" }}>
