@@ -5,7 +5,9 @@ This is a simple employee directory application that allows  to view a list of e
 
 ## Images
 
+![EmployeeDeskhome](https://user-images.githubusercontent.com/109524009/221769207-456ddc4b-e912-478b-9e87-9462f8871bf8.jpg)
 
+![EmployeeDesk](https://user-images.githubusercontent.com/109524009/221769213-44f8e771-0b86-4b72-be68-5ef564cd5949.jpg)
 
 ## Features
 
